@@ -1,6 +1,6 @@
 # Fortnite Festival Bot
 
-This is a Discord bot for managing Fortnite events. It can create text channels, manage commands, handle events, and post music tracks.
+This is a Discord bot designed for the Fortnite Festival. Its main function is to find Fortnite Festival music tracks and post them in a specific channel. Additionally, it can be used to search for a specific track using the `/search` command, providing information about the difficulty of the track.
 
 ## Installation
 

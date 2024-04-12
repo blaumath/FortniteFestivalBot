@@ -49,7 +49,7 @@ module.exports = {
             Bass: ${generateDifficultyBar(track.track.in.ba)}`
           )
           .setImage(track.track.au)
-          .setFooter({ text: 'Made with ❤️ by borck' })
+          .setFooter({ text: 'Made with ❤️ by nexumkill' })
         interaction.reply({ embeds: [embed] })
       } else {
         interaction.reply('Track not found')

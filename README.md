@@ -4,7 +4,7 @@ This is a Discord bot for managing Fortnite events. It can create text channels,
 
 ## Installation
 
-1. Clone this repository: `git clone https://github.com/yourusername/fortnite-festival-bot.git`
+1. Clone this repository: `git clone https://github.com/blaumath/FortniteFestivalBot.git`
 2. Navigate to the project directory: `cd fortnite-festival-bot`
 3. Install the dependencies: `npm install`
 4. Rename `config.example.json` to `config.json` and fill in your details. See the Configuration section below for more details.

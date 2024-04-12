@@ -1,10 +1,10 @@
 # Fortnite Festival Bot
 
-This is a Discord bot for managing Fortnite events. It can create text channels, manage commands, handle events, and post music tracks.
+This is a Discord bot designed for the Fortnite Festival. Its main function is to find Fortnite Festival music tracks and post them in a specific channel. Additionally, it can be used to search for a specific track using the `/search` command, providing information about the difficulty of the track.
 
 ## Installation
 
-1. Clone this repository: `git clone https://github.com/yourusername/fortnite-festival-bot.git`
+1. Clone this repository: `git clone https://github.com/blaumath/FortniteFestivalBot.git`
 2. Navigate to the project directory: `cd fortnite-festival-bot`
 3. Install the dependencies: `npm install`
 4. Rename `config.example.json` to `config.json` and fill in your details. See the Configuration section below for more details.

@@ -1,7 +1,8 @@
-const { EmbedBuilder } = require('discord.js')
+const { EmbedBuilder, ActivityType } = require('discord.js')
 const axios = require('axios')
 const fs = require('fs')
-const { channelId } = require('../../config.json');
+const path = require('path')
+const { newTracksChannel } = require('../../../config.json')
 
 function generateDifficultyBar(difficulty) {
   const filledSquare = '▰'
@@ -29,7 +30,7 @@ async function checkNewTracks(client) {
     track => !lastTrackList.includes(track.track.tt),
   )
   if (newTracks.length > 0) {
-    const channel = client.channels.cache.get(channelId)
+    const channel = client.channels.cache.get(newTracksChannel)
     await sendNewTracks(newTracks, channel)
   }
 
@@ -56,7 +57,10 @@ async function sendNewTracks(newTracks, channel) {
         Lead: ${generateDifficultyBar(track.track.in.gr)}
         Drums: ${generateDifficultyBar(track.track.in.ds)}
         Vocals: ${generateDifficultyBar(track.track.in.vl)}
-        Bass: ${generateDifficultyBar(track.track.in.ba)}`
+        Bass: ${generateDifficultyBar(track.track.in.ba)}
+        🎚️ Pro Difficulty Chart:
+        Pro Lead: ${generateDifficultyBar(track.track.in.pg)}
+        Pro Bass: ${generateDifficultyBar(track.track.in.pb)}`,
       )
       .setImage(track.track.au)
       .setFooter({ text: 'Made with ❤️ by nexumkill' })
@@ -66,5 +70,28 @@ async function sendNewTracks(newTracks, channel) {
 }
 
 module.exports = client => {
-  client.on('ready', () => checkNewTracks(client))
+  client.on('ready', () => {
+    checkNewTracks(client)
+
+    const trackFilePath = path.join(__dirname, '../../../tracks.txt')
+
+    fs.watch(trackFilePath, (eventType, filename) => {
+      if (eventType === 'change') {
+        fs.readFile(trackFilePath, 'utf-8', (err, data) => {
+          if (err) {
+            console.error(`Error reading tracks.txt: ${err}`)
+            return
+          }
+
+          const tracks = data.split('\n')
+          const trackCount = tracks.length
+
+          client.user.setActivity({
+            name: `${trackCount} Jam Tracks`,
+            type: ActivityType.Listening,
+          })
+        })
+      }
+    })
+  })
 }

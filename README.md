@@ -17,7 +17,7 @@ In the `config.json` file, you need to provide the following information:
 - `clientId`: This is your bot's client ID. You can get this from your bot's page on the [Discord Developer Portal](https://discord.com/developers/applications).
 - `guildId`: This is the ID of the server where the bot will be used. You can get this by right-clicking the server in Discord and selecting "Copy ID".
 - `token`: This is your bot's token. You can get this from your bot's page on the [Discord Developer Portal](https://discord.com/developers/applications). Keep this token safe and do not share it with anyone.
-- `channelId`: This is the ID of the channel where the bot will post music tracks. You can get this by right-clicking the channel in Discord and selecting "Copy ID".
+- `newTracksChannel`: This is the ID of the channel where the bot will post music tracks. You can get this by right-clicking the channel in Discord and selecting "Copy ID".
 
 ## Features
 - Music search: The bot has a search command to find music tracks.

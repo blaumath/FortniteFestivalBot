@@ -2,6 +2,13 @@
 
 This is a Discord bot designed for the Fortnite Festival. Its main function is to find Fortnite Festival music tracks and post them in a specific channel. Additionally, it can be used to search for a specific track using the `/search` command, providing information about the difficulty of the track.
 
+## Prerequisites
+
+to run this bot, you will need to have the following software installed on your system:
+
+- [Node.js](https://nodejs.org/en/download/).
+
+
 ## Installation
 
 1. Clone this repository: `git clone https://github.com/blaumath/FortniteFestivalBot.git`
